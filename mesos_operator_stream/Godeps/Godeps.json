@@ -40,7 +40,7 @@
 		},
 		{
 			"ImportPath": "github.com/golang/protobuf/proto",
-			"Rev": "748d386b5c1ea99658fd69fe9f03991ce86a90c1"
+			"Rev": "130e6b02ab059e7b717a096f397c5b60111cae74"
 		},
 		{
 			"ImportPath": "github.com/kr/logfmt",
@@ -48,63 +48,63 @@
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/client",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/client/leader",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/codec",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/codec/framing",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/codec/framing/recordio",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/codec/framing/single",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/log",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/operator/allocator",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/operator/maintenance",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/operator/master",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/ondrej-smola/mesos-go-http/lib/operator/quota",
-			"Comment": "1.2.0-2-g508a449",
-			"Rev": "508a44955d458fe3a0fb70fa50ee3a2272967ae4"
+			"Comment": "1.2.0-4-g38c4cb4",
+			"Rev": "38c4cb486497591d7a1348a8dd0401061c2b8b33"
 		},
 		{
 			"ImportPath": "github.com/pkg/errors",
