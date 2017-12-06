@@ -18,12 +18,29 @@ import (
 	"github.com/docopt/docopt-go"
 	"encoding/csv"
 	"os"
-	"bufio"
 	"strings"
+	"time"
+	"strconv"
 )
 
+type problem struct {
+	q string
+	a string
+}
+
+func parseLines(lines [][]string) []problem {
+	ret := make([]problem, len(lines))
+	for i, line := range lines {
+		ret[i] = problem{
+			q: line[0],
+			a: strings.TrimSpace(line[1]),
+		}
+	}
+	return ret
+}
+
 func main() {
-	usage := `Gophercises quiz-1.
+	usage := `Gophercises quiz-2.
 
 	Usage:
 	quiz [options]
@@ -36,10 +53,15 @@ func main() {
 	Options:
 	-h --help            show this help message and exit
 	-v --version         show version and exit
-	--csv=FILE           a csv file in the format 'question,answer' [default: problems.csv]
-	--limit=TIME         bthe time limit in seconds for the quiz [default: 30]
+	--csv=<file>         a csv file in the format 'question,answer' [default: problems.csv]
+	--limit=<time>       the time limit in seconds for the quiz [default: 30]
 `
-	arguments, _ := docopt.Parse(usage, nil, true, "0.1.0-SNAPSHOT", true)
+	arguments, _ := docopt.Parse(usage, nil, true, "0.2.0-SNAPSHOT", true)
+	time_limit, err := strconv.Atoi(arguments["--limit"].(string))
+	if err != nil {
+		fmt.Printf("> Failed reading time limit! %v\n", err)
+		os.Exit(1)
+	}
 
 	f, err := os.Open(arguments["--csv"].(string))
 	if err != nil {
@@ -53,24 +75,32 @@ func main() {
 		os.Exit(2)
     	}
 
-	reader := bufio.NewReader(os.Stdin)
-	answer_ok := 0
-	answer_ko := 0
+	problems := parseLines(lines)
+	timer := time.NewTimer(time.Duration(time_limit) * time.Second)
+	correct := 0
 
-	for i, line := range lines {
-		quiz := line[0]
-		answer := line[1]
+problemLoop:
+	for i, p := range problems {
+		fmt.Printf("[#%d] %s: ", i+1, p.q)
+		answerCh := make(chan string)
+		go func() {
+			var answer string
+			fmt.Scanf("%s\n", &answer)
+			answerCh <- answer
+		}()
 
-		fmt.Printf("[#%d] %s: ", i+1, quiz)
-		text, _ := reader.ReadString('\n')
-		if answer == strings.TrimSpace(text) {
-			//fmt.Println("Correct")
-			answer_ok += 1
-		} else {
-			//fmt.Println("Incorrect")
-			answer_ko += 1
+		select {
+		case <- timer.C:
+			fmt.Println()
+			break problemLoop
+		case answer := <-answerCh:
+			if answer == p.a {
+				correct++
+			}
 		}
+
 	}
-	fmt.Printf("You scored %d out of %d correct questions", answer_ok, answer_ok+answer_ko)
+
+	fmt.Printf("You scored %d out of %d correct questions", correct, len(problems))
 }
 
