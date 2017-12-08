@@ -6,6 +6,7 @@ import (
 	"github.com/docopt/docopt-go"
 	"github.com/trasgum/gophercises/cyoa/story"
 	"net/http"
+	//"html/template"
 )
 
 func main () {
@@ -31,7 +32,9 @@ func main () {
 	if err := cyoa.GetStories(filename, &story); err != nil {
 		panic(err)
 	}
-	h := cyoa.StoriesHandler(story, nil)
+	//tpl := template.Must(template.New("").Parse("Hello!"))
+	//h := cyoa.StoriesHandler(story, cyoa.WithTemplate(tpl))
+	h := cyoa.StoriesHandler(story)
 	fmt.Printf("Starting web server at: %s...\n", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), h))
 }
